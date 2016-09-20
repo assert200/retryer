@@ -12,7 +12,9 @@ module Retryer
       retries = 0
       begin
         result = yield
-        raise "Condition not met" unless result
+        if result==false
+          raise "Condition not met"
+        end
       rescue Exception => e
         if retries < @max_retries
           sleep @interval
@@ -40,7 +42,9 @@ module Retryer
           retries = 0
           begin
             result = yield
-            raise "Condition not met" unless result
+            if result==false
+              raise "Condition not met"
+            end
           rescue Exception => e
             sleep @interval
             retries += 1
