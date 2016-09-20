@@ -11,10 +11,7 @@ module Retryer
     def until(description: 'Operation')
       retries = 0
       begin
-        result = yield
-        if result==false
-          raise "Condition not met"
-        end
+        yield
       rescue Exception => e
         if retries < @max_retries
           sleep @interval
@@ -41,10 +38,7 @@ module Retryer
         Timeout::timeout(@timeout) do
           retries = 0
           begin
-            result = yield
-            if result==false
-              raise "Condition not met"
-            end
+            raise "Condition not met" unless yield
           rescue Exception => e
             sleep @interval
             retries += 1
