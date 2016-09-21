@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'retryer'
-  s.version     = '0.4.1'
+  s.version     = '0.4.2'
   s.date        = '2016-09-21'
   s.summary     = "Retryer"
   s.description = "Retry and wait tool"
