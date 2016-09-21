@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'retryer'
-  s.version     = '0.3.0'
-  s.date        = '2016-09-20'
+  s.version     = '0.4.1'
+  s.date        = '2016-09-21'
   s.summary     = "Retryer"
   s.description = "Retry and wait tool"
   s.authors     = ["James Barker"]

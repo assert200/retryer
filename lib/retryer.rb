@@ -8,7 +8,7 @@ module Retryer
       @verbose=verbose
     end
 
-    def until(description: 'Operation')
+    def do(description: 'Operation')
       retries = 0
       begin
         yield
