@@ -16,7 +16,7 @@ module Retryer
         if retries < @max_retries
           sleep @interval
           retries += 1
-          puts "Retrying: '#{description}' (retries #{retries}) with caught exeception: #{e}" if @verbose
+          puts "Retrying: '#{description}' (retries #{retries}) with caught exception: #{e}" if @verbose
           retry
         end
         raise "MAX RETRIES REACHED: '#{description}' failed after retrying #{@max_retries} times."
@@ -42,7 +42,7 @@ module Retryer
           rescue Exception => e
             sleep @interval
             retries += 1
-            puts "Retrying during wait (retries #{retries}) '#{description}' with caught exeception: #{e}" if @verbose
+            puts "Retrying during wait (retries #{retries}) '#{description}' with caught exception: #{e}" if @verbose
             retry
           end
         end
