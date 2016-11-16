@@ -1,3 +1,5 @@
+require 'timeout'
+
 module Retryer
   class Retry
     attr_accessor :max_retries, :interval
