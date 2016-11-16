@@ -11,7 +11,7 @@ Provides 2 forms of retrying:
 ## Retryer Code Example 
 ```ruby
 require 'retryer'
-retryer ||= Retryer::Retry.new(max_retries: 5, interval: 1)
+retryer = Retryer::Retry.new(max_retries: 5, interval: 1)
 counter = 0
 retryer.do { raise "Connection Failed." }
 ```
